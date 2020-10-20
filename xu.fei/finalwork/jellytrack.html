@@ -10,6 +10,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
    <script src="../lib/js/jquery-2.2.4.min.js"></script>
+   <script src="../js/signin.js"></script>
    <script src="../js/app1.js"></script>
 
    <script src="../lib/js/jquery.mobile-1.4.5.min.js"></script>
@@ -30,24 +31,39 @@
          <div class="welcome display-flex  flex-justify-center">
                <p>Build Your Own JellyCat Community, <br>Have Fun!</p>
             </div>
+<!--          <div class="login-failure"><p>Invalid login name or password!</p></div> -->
+
+
+
 
          <form id="signin-form" data-ajax="false">
             <div class=" form-control">
-               <label for="signin-username" class="form-label">Email</label>
-               <input id="signin-username" type="email" class="email form-input" data-role="none" placeholder="asherrfei@gmail.com">
+               <label for="signin-username" class="form-label">Username</label>
+               <input id="signin-username" type="text" class="email form-input" data-role="none" placeholder="Username">
             </div>
             <div class="form-control">
                <label for="signin-password" class="form-label">Password</label>
                <input id="signin-password" type="password" class="form-input" data-role="none" placeholder=" Password">
             </div>
-            <div class="signin form-control">
+
+<!--             <div class="signin form-control">
                <a href="#list-page" class="form-button">Sign In</a>
             </div>
+ -->
+ <div class="form-control">
+               <input type="submit" class="form-button3" value="Sign In" data-role="none">
+            </div>
+
             <div class="signup form-control signin-alt">
                Don't have an account?
                <a href="#signup-page">Sign Up</a>
             </div>
          </form>
+      </div>
+      <div class="modal" id="signin-warning-modal">
+         <div class="modal-toast top" data-deactivate="#signin-warning-modal">
+            <div class="message">Message</div>
+         </div>
       </div>
    </section>
 
@@ -55,8 +71,8 @@
       <div data-role="main" class="display-flex flex-align-center flex-justify-center">
          <form id="signup-form" data-ajax="false">
             <div class="form-control">
-               <label for="signup-username" class="form-label">Email</label>
-               <input id="signup-username" type="email" class="form-input" data-role="none" placeholder="asherrfei@gmail.com">
+               <label for="signup-username" class="form-label">Username</label>
+               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Username">
             </div>
 
        <!--      <div class="form-control">
@@ -82,102 +98,733 @@
          </form>
       </div>
    </section>
-
+<!-- // -->
    <section data-role="page" id="recent-page">
-      <div data-role="main"></div>
-      <footer data-role="footer">
-         <ul>
+
+      <!-- <div class="first location"> -->
+
+     <!--  </div> -->
+
+      <div data-role="main">
+                  <a href="#location-animal-profile-page"><img class="locationicon" border="0" src="../img/location.png" width="55" height="80"> </a>
+
+                   <a href="#location-animal-profile-page"><img class="locationicon2" border="0" src="../img/location.png" width="55" height="80"> </a>
+
+                    <a href="#location-animal-profile-page"><img class="locationicon3" border="0" src="../img/location.png" width="55" height="80"> </a>
+
+
+         <!-- <div class="floater top right">
+            <div class="btn-circle" data-activate="#recent-add-modal">&equiv;</div>
+         </div>
+         <div class="floater bottom right">
+            <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
+      </div> -->
+
+         <div class="modal" id="recent-add-modal">
+            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
+            <div class="modal-drawer bottom">
+               <div class="modal-head">head</div>
+               <div class="modal-body">body</div>
+            </div>
+         </div>
+
+         <div class="modal" id="recent-profile-modal">
+            <div class="modal-drawer left">
+               <div class="modal-head">head</div>
+               <div class="modal-body">body</div>
+            </div>
+         </div>
+      </div>
+
+      <footer data-role="footer" data-template="#footer-template">
+<!--          <ul>
             <li><a href="#list-page">JellyCat</a></li>
 
             <li><a href="#recent-page">Location</a></li>
 
             <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
+         </ul> -->
       </footer>
    </section>
 
    <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>JellyCat</h1>
-      </header>
-      <div data-role="main" class="listul">
-         <ul>
-            <!-- li*10>a[href=#animal-profile-page]{Animal $} -->
-            <li class="brownbunny"><a href="#animal-profile-page"><img src="../img/brownbunny.png" class="bbunny">
-            Bunny</a></li>
-            <li><a href="#animal-profile-page"><img src="../img/sheep.png" class="bbunny">Sheep</a></li>
-            <li><a href="#animal-profile-page"><img src="../img/piggy.png" class="bbunny">Piggy</a></li>
-            <li><a href="#animal-profile-page"><img src="../img/unicorn.png" class="bbunny">Unicorn</a></li>
-            <li><a href="#animal-profile-page"><img src="../img/chicken.png" class="bbunny">Chicken</a></li>
-<!--             <li><a href="#animal-profile-page">JellyCat 6</a></li>
-            <li><a href="#animal-profile-page">JellyCat 7</a></li>
-            <li><a href="#animal-profile-page">JellyCat 8</a></li>
-            <li><a href="#animal-profile-page">JellyCat 9</a></li>
-            <li><a href="#animal-profile-page">JellyCat 10</a></li> -->
-         </ul>
-      </div>
-      <footer data-role="footer">
-         <ul>
-            <li><a href="#list-page">JellyCat</a></li>
 
-            <li><a href="#recent-page">Location</a></li>
-            
-            <li><a href="#user-profile-page">Profile</a></li>
+      <header data-role="header">
+
+         <h1>JellyCat</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#jellyprofile-page" data-activate="#list-add-modal">&plus;</a></li>
          </ul>
-      </footer>
+      </header>
+
+      <div data-role="main" class="listul">
+         <div class="overscroll">
+
+     <div class="animallist">
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/brownbunny.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Bunny</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong>&nbsp;&nbsp; Brown</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/sheep.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Sheep</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong>&nbsp;&nbsp;White</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/piggy.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Piggy</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong> &nbsp;&nbsp;Pink</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/unicorn.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Unicorn</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong> &nbsp;&nbsp;White and pink</div>
+                  </div>
+               </a>
+                <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/chicken.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Chicken</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong> &nbsp;&nbsp;White, yellow and red</div>
+                  </div>
+               </a>
+                          <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/brownbunny.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Bunny</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong>&nbsp;&nbsp; Brown</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/sheep.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Sheep</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong>&nbsp;&nbsp;White</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/piggy.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Piggy</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong> &nbsp;&nbsp;Pink</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/unicorn.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Unicorn</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong> &nbsp;&nbsp;White and pink</div>
+                  </div>
+               </a>
+                <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="../img/chicken.png" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Chicken</div>
+                     <div class="animallist-type"><strong>Type:</strong> &nbsp;&nbsp;Soft Toy</div>
+                     <div class="animallist-breed"><strong>Color:</strong> &nbsp;&nbsp;White, yellow and red</div>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </div>
+ 
+      </div>
+   </div>
+      <footer data-role="footer" data-template="#footer-template">
    </section>
 
+<section data-role="page" id="jellyprofile-page">
+      <header data-role="header">
+
+         <h1>New JellyCat</h1>
+          <ul>
+            <li class="flex-stretch"><a href="#list-page" >Back</a></li>
+            <li><a href="#list-page" >Done</a></li>
+         </ul>
+
+   </header>
+     <div data-role="main">
+      <div class="overscroll">
+          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="../img/profileplus.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
+         </div>
+         <div class=" display-flex  flex-justify-center">
+               <h4>New JellyCat Profile</h4>
+            </div>
+<h5>Basic Information</h5>
+
+         <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Name</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Color&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Type&nbsp;&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+
+         <h5>Saved Places</h5>
+       <!--   <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div> -->
+        <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+                 <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Address 1</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+                 <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Address 2</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+    <h5>Album</h5>
+     <div class="grid gap bunnylist">
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/addimage.png">
+              </div>
+           </figure>
+        </div>
+<!-- 
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div>
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div>
+
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div> -->
+
+
+</div>
+
+      </div>
+   </div>
+   </section>
+
+<section data-role="page" id="profile-settings-page">
+      <header data-role="header">
+
+         <h1>Superman</h1>
+          <ul>
+            <li class="flex-stretch"><a href="#setting-page" >Back</a></li>
+            <li><a href="#user-profile-page" >Done</a></li>
+         </ul>
+
+   </header>
+     <div data-role="main">
+      <div class="overscroll">
+          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="../img/supermanadd.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
+         </div>
+
+         <div class=" display-flex  flex-justify-center">
+               <h4>Superman</h4>
+            </div>
+
+
+         <div class=" form-control">
+               <label for="bunnyname2" class="bunnyname2">Name</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="Superman">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname2" class="bunnyname2">Email&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="asherrfei@gmail.com">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname2" class="bunnyname2">Phone</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="1234566">
+         </div>
+
+
+         
+
+</div>
+
+      </div>
+   </div>
+   </section>
+
+   <section data-role="page" id="password-change-page">
+      <header data-role="header">
+
+         <h1>Change your password</h1>
+          <ul>
+            <li class="flex-stretch"><a href="#setting-page" >Back</a></li>
+            <!-- <li><a href="#user-profile-page" >Done</a></li> -->
+         </ul>
+
+   </header>
+     <div data-role="main">
+      <div class="overscroll">
+         <!--  <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="../img/supermanadd.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
+         </div> -->
+<!-- 
+         <div class=" display-flex  flex-justify-center">
+               <h4>Superman</h4>
+            </div> -->
+
+         <div class=" form-control">
+               <label for="bunnyname3" class="bunnyname3">Current Password</label>
+               <input id="bunnyprofilename2" type="password" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname3" class="bunnyname3">New Password</label>
+               <input id="bunnyprofilename2" type="password" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname3" class="bunnyname3">Confirm Password</label>
+               <input id="bunnyprofilename2" type="password" class="bunnyprofilename" data-role="none" placeholder="">
+         </div>
+
+      <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+         <div class="update form-control">
+               <a href="#setting-page" class="form-button1">Update</a>
+         </div>
+      </div>
+
+         
+
+</div>
+
+      </div>
+   </div>
+   </section>
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
 
           <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="../img/profile.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
+            <img src="../img/superman.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
          </div>
          <div class=" display-flex  flex-justify-center">
-               <h1>User Profile</h1>
+               <h1>Superman</h1>
+
             </div>
+            <h6>asherrfei@gmail.com</h6>
+            <h6>6746746774</h6>
+
 
          <ul class="profile">
-            <li class="brownbunny"><a href="">Edit Profile</a></li>
-            <li><a href="">Change your password</a></li>
-            <li><a href="#signin-page">Logout</a></li>
+            <li class="brownbunny"><a href="#setting-page">Settings</a></li>
+            <li><a href="#help-page">Help</a></li>
+            <!-- <li><a href="#signin-page">Logout</a></li> -->
          </ul>
 
 <!--          <p><a href="#signin-page">Logout</a></p> -->
       </div>
-      <footer data-role="footer">
-         <ul>
-              <li><a href="#list-page">JellyCat</a></li>
-            <li><a href="#recent-page">Location</a></li>
-          
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
+      <footer data-role="footer" data-template="#footer-template">
    </section>
+
+
+   <section data-role="page" id="help-page">
+       <header data-role="header">
+         <h1>Help</h1>
+         <ul>
+            <!-- data-rel="back" -->
+            <li class="flex-stretch"><a href="#user-profile-page">Back</a></li>
+ 
+         </ul>
+      </header>
+
+      <div data-role="main">
+
+          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="../img/superman.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
+         </div>
+         <div class=" display-flex flex-justify-center">
+               <h1 class="help">Unfortunately, no help can be provided today, try again tomorrow and good luck!</h1>
+
+            </div>
+           <!--  <h6>asherrfei@gmail.com</h6> -->
+
+ 
+
+<!--          <p><a href="#signin-page">Logout</a></p> -->
+      </div>
+   </section>
+
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>JellyDetail</h1>
+         <h1>JellyProfile</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <!-- data-rel="back" -->
+            <li class="flex-stretch"><a href="#list-page">Back</a></li>
+            <li><a href="#animal-profile-edit-page" >Edit</a></li>
          </ul>
       </header>
       <div data-role="main">
+ <!--       <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div> -->
+ <div class="overscroll">
        <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="../img/profile.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw">
+            <img src="../img/bunnyprofile.png" alt="profile" viewBox="0 0 100 100" style="width:54.8vw;height:50vw" class="bunnyimg">
          </div>
-         <div class=" display-flex  flex-justify-center">
-               <h1>JellyCat Profile</h1>
+         <div class="display-flex  flex-justify-center">
+               <h4>Brown Bunny</h4>
             </div>
+         <h5>Basic Information</h5>
 
-         <ul class="profile">
-            <li class="brownbunny"><a href="">Type</a></li>
-            <li><a href="">Location</a></li>
+         <ul class="profile2">
+             <li><strong>Name:</strong> &nbsp;&nbsp;Brown Bunny</li>
+             <li><strong>Color:</strong> &nbsp;&nbsp;&nbsp;Brown</li>
+            <li><strong>Type:</strong>&nbsp; &nbsp;&nbsp;Soft Toy</li>
+            
          </ul>
 
+
+         <h5>Saved Places</h5>
+         <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div>
+
+                  <ul class="profile2">
+             <li><strong>Home: </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;123 Serrano Drive</li>
+             <li><strong>Address 1: </strong>&nbsp;&nbsp;&nbsp;789 Arballo</li>
+            <li><strong>Address 2:</strong>&nbsp; &nbsp;&nbsp;135 Balboa</li>
+         </ul>
+    <h5>Album</h5>
+     <div class="grid gap bunnylist">
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+
+
+
+
       </div>
+   </div>
    </section>
+
+   <section data-role="page" id="location-animal-profile-page">
+      <header data-role="header">
+         <h1>JellyProfile</h1>
+         <ul>
+            <!-- data-rel="back" -->
+            <li class="flex-stretch"><a href="#recent-page">Back</a></li>
+            <!-- <li><a href="#animal-profile-edit-page" >Edit</a></li> -->
+         </ul>
+      </header>
+      <div data-role="main">
+ <!--       <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div> -->
+ <div class="overscroll">
+       <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="../img/bunnyprofile.png" alt="profile" viewBox="0 0 100 100" style="width:54.8vw;height:50vw" class="bunnyimg">
+         </div>
+         <div class="display-flex  flex-justify-center">
+               <h4>Brown Bunny</h4>
+            </div>
+         <h5>Basic Information</h5>
+
+         <ul class="profile2">
+             <li><strong>Name:</strong> &nbsp;&nbsp;Brown Bunny</li>
+             <li><strong>Color:</strong> &nbsp;&nbsp;&nbsp;Brown</li>
+            <li><strong>Type:</strong>&nbsp; &nbsp;&nbsp;Soft Toy</li>
+            
+         </ul>
+
+
+         <h5>Saved Places</h5>
+         <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div>
+
+                  <ul class="profile2">
+             <li><strong>Home: </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;123 Serrano Drive</li>
+             <li><strong>Address 1: </strong>&nbsp;&nbsp;&nbsp;789 Arballo</li>
+            <li><strong>Address 2:</strong>&nbsp; &nbsp;&nbsp;135 Balboa</li>
+         </ul>
+    <h5>Album</h5>
+     <div class="grid gap bunnylist">
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunny.png">
+              </div>
+           </figure>
+        </div>
+
+
+
+
+      </div>
+   </div>
+   </section>
+  <section data-role="page" id="animal-profile-edit-page">
+      <header data-role="header">
+         <h1>JellyProfile</h1>
+         <ul>
+            <li class="flex-stretch"><a href="#animal-profile-page" >Back</a></li>
+            <li><a href="#animal-profile-page" >Done</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+ <!--       <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div> -->
+ <div class="overscroll">
+       <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="../img/bunnyprofilechange.png" alt="profile" viewBox="0 0 100 100" style="width:54.8vw;height:50vw" class="bunnyimg">
+         </div>
+         <div class="display-flex  flex-justify-center">
+               <h4>Brown Bunny</h4>
+            </div>
+         <h5>Basic Information</h5>
+
+         <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Name</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="Brown Bunny">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Color&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="Brown">
+         </div>
+
+         <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Type&nbsp;&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="Soft Toy">
+         </div>
+
+
+         <h5>Saved Places</h5>
+         <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div>
+        <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="123 Serrano Drive">
+         </div>
+
+                 <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Address 1</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="789 Arballo">
+         </div>
+
+                 <div class=" form-control">
+               <label for="bunnyname" class="bunnyname">Address 2</label>
+               <input id="bunnyprofilename" type="text" class="bunnyprofilename" data-role="none" placeholder="135 Balboa">
+         </div>
+    <h5>Album</h5>
+     <div class="grid gap bunnylist">
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div>
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div>
+  
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div>
+
+
+         <div class="bunnycol">
+           <figure class="bunny-figure">
+              <div class="bunny-photo">
+                 <img src="../img/brownbunnyremove.png">
+              </div>
+           </figure>
+        </div>
+
+
+
+      </div>
+
+      <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+         <div class="update form-control">
+               <a href="#animal-profile-page" class="form-button4">Delete Profile</a>
+         </div>
+      </div>
+   </div>
+   </section>
+
+    <section data-role="page" id="setting-page">
+      <header data-role="header">
+         <h1>Settings</h1>
+         <ul>
+            <!-- data-rel="back" -->
+            <li class="flex-stretch"><a href="#user-profile-page">Back</a></li>
+         <!--    <li><a href="#animal-profile-edit-page" >Edit</a></li> -->
+         </ul>
+      </header>
+      <div data-role="main">
+ <!--       <div class="profile-top" style="height:200px;flex:none;background-image:url(../img/map1.png)"></div> -->
+ <div class="overscroll">
+
+       <ul class="settings-list">
+          <li class="settings-item">
+             <a href="#profile-settings-page" class="ui-link">Profile Settings</a>
+          </li>
+                    <li class="settings-item">
+             <a href="#password-change-page" class="ui-link">Change Password</a>
+          </li>
+         </li>
+                    <li class="settings-item">
+             <a href="#signin-page" class="ui-link">Log out</a>
+          </li>
+
+       </ul>
+         
+   </div>
+   </section>
+
+
+      <div class="modal" id="warning-modal">
+      <div class="modal-toast top" data-deactivate="#warning-modal">
+         <div class="message">Message</div>
+      </div>
+   </div>
+
+   <script type="text/template" id="footer-template">
+   <ul>
+
+      <li><a href="#list-page">
+         <div class="nav-icon"><img src="../img/listicon.png" alt=""></div>
+         <div class="nav-label">List</div>
+      </a></li>
+            <li><a href="#recent-page">
+         <div class="nav-icon"><img src="../img/mapicon.png" alt=""></div>
+         <div class="nav-label">Recent</div>
+      </a></li>
+      <li><a href="#user-profile-page">
+         <div class="nav-icon"><img src="../img/profileicon.png" alt=""></div>
+         <div class="nav-label">Profile</div>
+      </a></li>
+   </ul>
+   </script>
+
 
 </body>
 </html>
