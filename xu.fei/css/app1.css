@@ -66,15 +66,6 @@ h6{
 
 }
 
-h7{
-  text-align:center;
-  color:grey;
-  font-weight:300;
-  margin-top:0;
-
-
-
-}
 
 a {
    color:inherit;
@@ -188,6 +179,20 @@ a {
     width: 100%;
     border-width: 0;
     background-color: #ffa500;
+    font: inherit;
+    padding: 0.5em 1em;
+    margin: 0;
+    outline: 0;
+    border-radius: 0.5em;
+    text-align: center;
+    margin-top:1em;
+}
+
+.form-button5 {
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    background-color: grey;
     font: inherit;
     padding: 0.5em 1em;
     margin: 0;
