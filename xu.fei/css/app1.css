@@ -418,11 +418,16 @@ section#list-page .listul li a{
 
 .animallist-image img {
     margin-left: 1em;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
+    /* margin-bottom: 0em; */
     vertical-align: text-bottom;
+    border-radius: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
+
 .animallist-item {
     display: flex;
     background-color:   #ecf0f300;
@@ -432,21 +437,44 @@ section#list-page .listul li a{
     overflow: hidden;
 }
 .animallist-description {
-   padding:0.5em;
+   padding-left:2em;
+   padding-top:1em;
+   padding-bottom:0.5em;
 }
 .animallist-type,
 .animallist-breed {
 
    font-size:0.6em;
-   font-weight:100;
+   font-weight:400;
    color:grey;
 
 }
 .animallist-name {
   padding-bottom:0.5em;
    font-size:1.2em;
-   font-weight:100;
+   font-weight:400;
 
+}
+
+.animal-profile-image {
+    display: inline-block;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+.animal-profile-image img {
+    height: 30vw;
+    width: 30vw;
+}
+
+.animal-profile-body {
+    display: inline-block;
+    margin-left: 2em;
+}
+
+.animal-profile-name {
+    padding-bottom: 3em;
+    font-weight: 600;
+    font-size: 18px;
 }
 .bbunny{
   display:inline-block;
@@ -521,6 +549,34 @@ ul.profile {
     font-size: 12px;
 }
 
+.profile-image {
+    background-image: linear-gradient(to right, #3ccdd8 , #02b3e8);
+    height: 77vw;
+}
+.profile-image img {
+    border-radius: 6em;
+    height: 30vw;
+    width: 30vw;
+    margin-left: 9em;
+    margin-top: 4em;
+}
+
+.profile-name {
+    text-align: center;
+    margin-top: 1em;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.profile-email {
+    text-align: center;
+    margin-top: 1em;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 50%;
+}
 /*.profile a:not([href='#'])::after {
    content:'>';
    position:absolute;
@@ -529,6 +585,21 @@ ul.profile {
    transform:translateY(-50%);
 }*/
 
+
+p.setting-text {
+    text-align: center;
+    margin-top: -1em;
+}
+
+.setting-text a {
+    box-shadow: 0px 1px 13px 3px #79797963;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 1em;
+    background-color: white;
+}
 
 ul.profile2 {
 /*    margin-right: 1.5em;*/
@@ -549,7 +620,7 @@ ul.profile2 {
     opacity: 0;
     pointer-events: none;
     z-index:10;
-    margin-top: 16em;
+  /*  margin-top: 16em;*/
 }
 .modal.active {
    opacity:1;

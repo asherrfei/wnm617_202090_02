@@ -10,20 +10,26 @@ const makeWarning = (target,message) => {
 
 
 
-const checkSigninForm = () => {
+const checkSigninForm = async () => {
    let user = $("#signin-username").val();
    let pass = $("#signin-password").val();
 
    console.log(user,pass)
+
    if(user=="" || pass=="") {
-      makeWarning("#signin-warning-modal","Type a Username and Password");
+      makeWarning("#warning-modal","Type a Username and Password");
       return;
    }
 
-   if(user == 'user' && pass == 'pass') {
+   let found_user = await query({
+      type:'check_signin',
+      params:[user,pass]
+   });
+
+   if(found_user.result.length) {
       // logged in
       console.log('success');
-      sessionStorage.userId = 3;
+      sessionStorage.userId = found_user.result[0].id;
       $("#signin-form")[0].reset();
    } else {
       // not logged in
@@ -31,7 +37,7 @@ const checkSigninForm = () => {
       sessionStorage.removeItem('userId');
 
       // DO SOMETHING HERE
-      makeWarning("#signin-warning-modal","Invalid login name or password")
+      makeWarning("#warning-modal","Sign In Failed");
    }
 
    checkUserId();
@@ -49,6 +55,6 @@ const checkUserId = () => {
    } else {
       // logged in
       if(p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#list-page");
+         $.mobile.navigate("#recent-page");
    }
 }
