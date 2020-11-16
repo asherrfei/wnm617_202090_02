@@ -1,5 +1,7 @@
 
 
+
+
 // Document Ready
 $(()=>{
 
@@ -20,9 +22,6 @@ $(()=>{
          case 'animal-profile-page': AnimalProfilePage(); break;
       }
    })
-
-
-
 
    /* FORM SUBMISSIONS */
 
@@ -48,9 +47,6 @@ $(()=>{
 
 
 
-
-
-
    .on("click","[data-activate]",function(){
       let target = $(this).data('activate');
       $(target).addClass("active");
@@ -64,7 +60,6 @@ $(()=>{
       $(target).toggleClass("active");
    })
    ;
-
 
 
 

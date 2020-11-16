@@ -78,14 +78,18 @@ function makeStatement($data) {
       case "locations_by_animal_id":
          return makeQuery($c,"SELECT * FROM track_locations WHERE animal_id = ?",$p);
 
-  
-      case "recent_location":
-         return makeQuery($c,"
-            SELECT * 
-            FROM `track_animals` a
-            INNER JOIN `track_locations` l
+      case "recent_locations":
+         return makeQuery($c,"SELECT * FROM
+            `track_animals` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
             ON a.id = l.animal_id
-            WHERE user_id = ? ",$p);
+            WHERE user_id = ?
+            GROUP BY l.animal_id
+            ",$p);
+
 
 
       case "check_signin":

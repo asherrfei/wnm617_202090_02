@@ -213,11 +213,11 @@ a {
    text-align:center;
    font-size:0.8em;
 }
-#recent-page [data-role='main'] {
+/*#recent-page [data-role='main'] {
    background-image:url(../img/map.jpg);
    background-position:center;
    background-size:cover;
-}
+}*/
 
 /*#recent-page [data-role='main1'] {
    background-image:url(../img/map.png);
@@ -877,3 +877,22 @@ li.settings-item {
    right:1em;
    transform:translateY(-50%);
 }
+
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.animal-top {
+  flex:none;
+  position:relative;
+  height:30vh;
+}
+.animal-bottom {
+  flex:1 1 100%;
+  position:relative;
+}
+
