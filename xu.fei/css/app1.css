@@ -464,6 +464,7 @@ section#list-page .listul li a{
 .animal-profile-image img {
     height: 30vw;
     width: 30vw;
+    border-radius: 65px;
 }
 
 .animal-profile-body {
@@ -705,8 +706,8 @@ ul.profile2 {
    border-width:0;
    font-weight:bold;
    background-color:transparent;
+   outline:0;
 }
-
 
 /* MODAL TOAST */
 .modal-toast {
@@ -735,6 +736,16 @@ ul.profile2 {
    pointer-events: initial;
 }
 
+.modal-close-floater {
+    position: absolute;
+}
+.modal-close-floater.right {
+    right: 1em;
+}
+.modal-close-floater.top {
+    top: -1em;
+    transform: translateY(-100%);
+}
 
 
 
@@ -892,7 +903,19 @@ li.settings-item {
   height:30vh;
 }
 .animal-bottom {
-  flex:1 1 100%;
-  position:relative;
+    flex: 1 1 100%;
+    position: relative;
+    border-top-left-radius: 29px;
+    border-top-right-radius: 29px;
+    background-color: white;
+    box-shadow: 0px -4px 14px 4px #7d7d7d80;
+    margin-top: -4px;
 }
 
+
+
+.icon {
+   width:1.5em;
+   height:1.5em;
+   vertical-align: middle;
+}
