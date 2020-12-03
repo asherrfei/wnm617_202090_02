@@ -18,7 +18,6 @@ const templater = f => a =>
    .reduce((r,o,i,a)=>r+f(o,i,a),'');
 
 
-
 const checkData = (exterior_check) => new Promise((resolve,reject)=>{
    let timeout = 0;
    const interior_check = () => {
