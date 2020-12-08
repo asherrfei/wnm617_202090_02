@@ -4,6 +4,13 @@
 
   
    <meta charset="UTF-8">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="site_logo.png">
+   <link rel="icon" href="site_logo.png">
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>JellyCat Tracker</title>
 
@@ -131,21 +138,50 @@
 <!-- List Page -->
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>List Page</h1>
-         <ul>
+         <!-- <h1>List Page</h1> -->
+   <!--       <ul>
             <li class="flex-stretch"></li>
             <li><a href="#animal-add-page" data-activate="#list-add-modal">
               <img src="img/addimage.png" alt="" class="icon-plus">
             </a></li>
+         </ul> -->
+
+          <ul>
+            <li class="flex-stretch list-search">
+               <form class="hotdog" id="list-search-form" data-ajax="false">
+                  <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+               </form>
+            </li>
+            <li>
+               <a href="#animal-add-page" class="btn-circle" style="
+    padding-left: 10px;
+    padding-right: 10px;
+">&plus;</a>
+            </li>
+
+                      <!-- <div class="floater right bottom">
+            <a href="#animal-add-page" class="btn-circle">&plus;</a>
+         </div>
+
+            </li> -->
          </ul>
       </header>
+
+      <header data-role="header" class="ui-header1">
+         <div class="filter-list"></div>
+      </header>
+
       <div data-role="main">
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
+<!--        <div class="floater right bottom">
+            <a href="#animal-add-page" class="btn-circle">&plus;</a>
+         </div> -->
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
+
 
 <!-- User's profile page -->
    <section data-role="page" id="user-profile-page">
@@ -222,10 +258,39 @@
       </div>
    </section>
 
+
+
+
+
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Choose Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+      </div>
+   </section>
+
+
+
+
+
+
 <!-- animal-profile-age -->
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Animal Page</h1>
+         <h1>JellyCat Profile</h1>
          <ul>
             <li><a href="#" data-rel="back">
                <img src="img/left.png" alt="" class="icon">
@@ -240,15 +305,17 @@
          <div class="animal-top">
           <div class="map"></div>
           <div class="floater bottom right">
-               <a href="#location-add-page" class="btn-circle">&plus;</a>
+               <a href="#location-add-page" class="btn-circle1">&plus;</a>
             </div>
          
        </div>
- 
+    <div class="overscroll">
+       
         <div class="animal-bottom">
+          
             <div class="profile"></div>
           </div>
-
+       </div>
       </div>
    </section>
 

@@ -1,5 +1,12 @@
 
 
+const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
+   $("#list-page .animallist")
+      .html(a.length?makeAnimalList(a):empty_phrase);
+}
+
+
+
 const makeAnimalList = templater(o=>`
 <div class="animallist-item js-animal-jump" data-id="${o.id}">
    <div class="animallist-image">
@@ -7,36 +14,47 @@ const makeAnimalList = templater(o=>`
    </div>
    <div class="animallist-description">
       <div class="animallist-name">${o.name}</div>
-
+      <div class="animallist-breed">Color: ${o.color}</div>
    </div>
 </div>
 `);
 
 
+
+
 const makeUserProfile = templater(o=>`
 <div class="profile-image">
    <img src="${o.img}" alt="">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
-
+   <div class="floater right bottom">
+      <a href="#user-upload-page"><img class="icon10" src="img/photo_change.png"></a>
+   </div>
 </div>
-
+<div class="profile-body">
+   <div class="profile-name">${o.username}</div>
+   <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
+</div>
 <p class="setting-text"><a href="#settings-page">Settings</a></p>
 `);
 
+
+
+
 const makeAnimalProfile = templater(o=>`
+
 <div class="animal-profile-image">
    <img src="${o.img}" alt="">
 </div>
+
 <div class="animal-profile-body">
    <div class="animal-profile-name">${o.name}</div>
    <div class="animal-profile-type">Type: ${o.type}</div>
    <div class="animal-profile-breed">Color: ${o.color}</div>
 </div>
 <div class="animal-profile-description"><strong>Description</strong>: ${o.description}</div>
-<div>
-   <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
+<div class="delet botton">
+   <a href="#" class="js-animal-delete" data-id="${o.id}"><img src="img/delete.png" alt="" class="icon1">Delete</a>
 </div>
+
 `);
 
 
@@ -127,3 +145,29 @@ ${FormControl({
    value:o.email
 })}
 `;
+
+
+
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" data-field="type" data-value="all">All</div> 
+   ${filterList(animals,'type')} 
+   ${filterList(animals,'color')} 
+   `;
+}
+
+
+
+
+
+const makeUploaderImage = ({namespace,folder,name}) => {
+   $(`#${namespace}-image`).val(folder+name);
+   $(`#${namespace}-page .image-uploader`)
+      .css({'background-image':`url('${folder+name}')`})
+}
