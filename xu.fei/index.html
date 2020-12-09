@@ -40,7 +40,7 @@
 <!-- Siginin Page -->
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column"> 
-         <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+         <div class="flex-stretch1 display-flex flex-align-center flex-justify-center">
             <img src="img/jellycat_logo.png" alt="jellycat logo" viewBox="0 0 100 100" style="width:50vw;height:50vw">
          </div>
       <div class=" display-flex  flex-justify-center">
@@ -52,16 +52,16 @@
 
       <form id="signin-form" data-ajax="false">
             <div class=" form-control">
-               <label for="signin-username" class="form-label">Username</label>
-               <input id="signin-username" type="text" class="email form-input" data-role="none" placeholder="Username">
+              <!--  <label for="signin-username" class="form-label">Username</label> -->
+               <input id="signin-username" type="text" class="email form-input5" data-role="none" placeholder="Username">
             </div>
             <div class="form-control">
-               <label for="signin-password" class="form-label">Password</label>
-               <input id="signin-password" type="password" class="form-input" data-role="none" placeholder=" Password">
+              <!--  <label for="signin-password" class="form-label">Password</label> -->
+               <input id="signin-password" type="password" class="form-input5" data-role="none" placeholder=" Password">
             </div>
 
             <div class="form-control">
-               <input type="submit" class="form-button3" value="Sign In" data-role="none">
+               <input type="submit" class="form-button8" value="Sign In" data-role="none">
             </div>
 
             <div class="signup form-control signin-alt">
@@ -117,7 +117,7 @@
          <div class="modal" id="recent-animal-modal">
             <div class="modal-drawer bottom">
                <div class="modal-close-floater top right">
-                  <div class="btn-circle" data-deactivate="#recent-animal-modal">&times;</div>
+                  <div class="btn-circle7" data-deactivate="#recent-animal-modal">&times;</div>
                </div>
                <div class="modal-head">JellyProfile</div>
                <div class="modal-body"></div>
@@ -150,6 +150,7 @@
             <li class="flex-stretch list-search">
                <form class="hotdog" id="list-search-form" data-ajax="false">
                   <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+                  <img src="img/search.png" class="flex-none icon11">
                </form>
             </li>
             <li>
@@ -158,22 +159,25 @@
     padding-right: 10px;
 ">&plus;</a>
             </li>
-
-                      <!-- <div class="floater right bottom">
-            <a href="#animal-add-page" class="btn-circle">&plus;</a>
-         </div>
-
-            </li> -->
          </ul>
       </header>
+
+
 
       <header data-role="header" class="ui-header1">
          <div class="filter-list"></div>
       </header>
 
+
+
+
       <div data-role="main">
          <div class="overscroll">
-            <div class="animallist"></div>
+            <div class="animallist">
+               
+            </div>
+
+
          </div>
 <!--        <div class="floater right bottom">
             <a href="#animal-add-page" class="btn-circle">&plus;</a>
@@ -289,15 +293,15 @@
 
 <!-- animal-profile-age -->
    <section data-role="page" id="animal-profile-page">
-      <header data-role="header">
+      <header data-role="header" class="ui-header2">
          <h1>JellyCat Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back">
+            <li><a href="#" data-rel="back" class="btn-circle-icon ui-link">
                <img src="img/left.png" alt="" class="icon">
             </a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#animal-edit-page">
-               <img src="img/pencil.png" alt="" class="icon">
+            <li><a href="#animal-edit-page" class="btn-circle-icon">
+               <img src="img/pencil.png" alt="" class="icon5">
             </a></li>
          </ul>
       </header>
@@ -326,12 +330,16 @@
 
 
     <section data-role="page" id="animal-add-page">
-      <header data-role="header">
-         <h1>Animal Info</h1>
+      <header data-role="header" class="ui-header2">
+         <h1>Add New Jelly</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back" class="btn-circle-icon ui-link">
+               <img src="img/left.png" alt="" class="icon">
+            </a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-animal-add">Save</a></li>
+            <li><a href="#" class="js-animal-add btn-circle-icon">
+               <img src="img/save.png" alt="" class="icon5">
+            </a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -359,12 +367,16 @@
 
 <!-- animal-edit-page -->
 <section data-role="page" id="animal-edit-page">
-      <header data-role="header">
-         <h1>Animal Info</h1>
+      <header data-role="header" class="ui-header2">
+         <h1>JellyCat Information</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back" class="btn-circle-icon">
+               <img src="img/left.png" alt class="icon">
+            </a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-animal-edit">Save</a></li>
+            <li><a href="#" class="js-animal-edit btn-circle-icon" >
+               <img src="img/save.png" alt class="icon5">
+            </a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -375,12 +387,15 @@
 
 <!-- location-add-page -->
 <section data-role="page" id="location-add-page">
-      <header data-role="header">
+      <header data-role="header" class="ui-header2">
          <h1>Choose Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back" class="btn-circle-icon">
+               <img src="img/left.png" alt="" class="icon">
+            </a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#location-description-page">Next</a></li>
+            <li><a href="#location-description-page" class="btn-circle-icon">
+               <img src="img/right.png" alt="" class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -393,17 +408,32 @@
 <!-- location description page -->
 
    <section data-role="page" id="location-description-page">
-      <header data-role="header">
+
+
+      <header data-role="header" class="ui-header2">
          <h1>Describe Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back" class="btn-circle-icon ui-link">
+               <img src="img/left.png" alt="" class="icon">
+            </a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-location-add">Save</a></li>
+            <li><a href="#" class="js-animal-add btn-circle-icon">
+               <img src="img/save.png" alt="" class="icon5">
+            </a></li>
          </ul>
+
       </header>
       <div data-role="main">
          <div class="overscroll">
             <form id="location-add-form" data-ajax="false" style="padding:1em">
+
+               <div>
+                  <input type="hidden" id="location-add-image">
+                  <label class="image-uploader thumbnail">
+                     <input type="file" data-role="none" id="location-add-upload">
+                  </label>
+               </div>
+
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>

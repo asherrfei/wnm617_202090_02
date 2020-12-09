@@ -88,6 +88,12 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
 
 
 const makeAnimalEditForm = o => `
+<div>
+   <input type="hidden" id="animal-edit-image" value="${o.img}">
+   <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+      <input type="file" data-role="none" id="animal-edit-upload">
+   </label>
+</div>
 ${FormControl({
    namespace:"animal-edit",
    name:"name",
@@ -151,12 +157,12 @@ ${FormControl({
 
 const filterList = (animals,type) => {
    let a = [...(new Set(animals.map(o=>o[type])))];
-   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+   return templater(o=>`<div class="filter btn-circle-icon2" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
 }
 
 const makeFilterList = (animals) => {
    return `
-   <div class="filter" data-field="type" data-value="all">All</div> 
+   <div class="filter btn-circle-icon1" data-field="type" data-value="all">All</div> 
    ${filterList(animals,'type')} 
    ${filterList(animals,'color')} 
    `;
@@ -166,8 +172,7 @@ const makeFilterList = (animals) => {
 
 
 
-const makeUploaderImage = ({namespace,folder,name}) => {
-   $(`#${namespace}-image`).val(folder+name);
-   $(`#${namespace}-page .image-uploader`)
-      .css({'background-image':`url('${folder+name}')`})
+const makeUploaderImage = (el,name,folder='') => {
+   $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
+      .prev().val(folder+name)
 }

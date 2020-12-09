@@ -216,18 +216,19 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
-
-      case "update_animal":
+  case "update_animal":
          $r = makeQuery($c,"UPDATE
             `track_animals`
             SET
                `name` = ?,
                `type` = ?,
                `color` = ?,
-               `description` = ?
+               `description` = ?,
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
+
 
 
 
