@@ -157,7 +157,7 @@ function makeStatement($data) {
 
       // INSERT
 
-      case "insert_user":
+        case "insert_user":
          $r = makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? OR `email` = ?",[$p[0],$p[1]]);
          if(count($r['result'])) return ['error'=>"Username or Email already exists"];
 
@@ -177,16 +177,15 @@ function makeStatement($data) {
             (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
-         
+
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
             (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
             VALUES
-            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'http://asherrfei.com/aau/wnm617/xu.fei/img/icon_marker.png', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
-
 
 
 
@@ -199,7 +198,6 @@ function makeStatement($data) {
             `track_users`
             SET
                `username` = ?,
-               `fullname` = ?,
                `email` = ?
             WHERE `id` = ?
             ",$p,false);

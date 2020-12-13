@@ -12,7 +12,7 @@ $(()=>{
    $(document)
 
 
-   // ROUTES
+  // ROUTES
    .on("pagecontainerbeforeshow",function(e,ui){
       console.log(ui.toPage[0].id)
 
@@ -24,7 +24,7 @@ $(()=>{
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-edit-page': UserEditPage(); break;
          case 'user-upload-page': UserUploadPage(); break;
-         
+
          case 'animal-profile-page': AnimalProfilePage(); break;
          case 'animal-edit-page': AnimalEditPage(); break;
 
@@ -32,6 +32,7 @@ $(()=>{
 
       }
    })
+
 
 
 
@@ -72,6 +73,7 @@ $(()=>{
 
 
 
+
    /* ANCHOR CLICKS */
 
    .on("click",".js-logout",function(e){
@@ -90,10 +92,10 @@ $(()=>{
    .on("click",".js-animal-delete",function(e){
       checkAnimalDelete($(this).data("id"));
    })
-
    .on("click",".js-user-upload",function(e){
       checkUserUpload();
    })
+
 
 
 
@@ -108,7 +110,6 @@ $(()=>{
          makeUploaderImage(this,d.result,'uploads/')
       })
    })
-
 
 
    

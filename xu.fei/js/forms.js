@@ -26,12 +26,11 @@ const checkSignupForm = () => {
 
 const checkUserEditForm = () => {
    let username = $("#user-edit-username").val();
-   let name = $("#user-edit-name").val();
    let email = $("#user-edit-email").val();
 
    query({
       type:'update_user',
-      params:[username,name,email,sessionStorage.userId]})
+      params:[username,email,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -86,8 +85,6 @@ const checkAnimalEditForm = () => {
 
 
 
-
-
 const checkAnimalDelete = id => {
    query({
       type:'delete_animal',
@@ -96,7 +93,7 @@ const checkAnimalDelete = id => {
       if(d.error) {
          throw d.error;
       }
-      window.history.back();
+      window.history.go(-2);
    });
 }
 
@@ -124,7 +121,7 @@ const checkSearchForm = async () => {
 
    let r = await query({type:"search_animals",params:[s,sessionStorage.userId]});
 
-   drawAnimalList(r.result,'<strong>No JellyCat found.</strong> <br><br><strong>Press "+" add new your JellyCat.</strong>');
+   drawAnimalList(r.result,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Sorry, no results found.</strong>');
 
    console.log(r)
 }
@@ -143,7 +140,7 @@ const checkListFilter = async (d) => {
       });
 
    console.log(r)
-   drawAnimalList(r.result,'No results found');
+   drawAnimalList(r.result,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Sorry, no results found.</strong>');
 }
 
 

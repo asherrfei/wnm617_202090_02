@@ -1,6 +1,6 @@
 
 
-const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
+const drawAnimalList = (a,empty_phrase='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>It is time to add your first JellyCat!</strong>') => {
    $("#list-page .animallist")
       .html(a.length?makeAnimalList(a):empty_phrase);
 }
@@ -23,17 +23,14 @@ const makeAnimalList = templater(o=>`
 
 
 const makeUserProfile = templater(o=>`
-<div class="profile-image">
+<div class="profile-image1">
    <img src="${o.img}" alt="">
-   <div class="floater right bottom">
-      <a href="#user-upload-page"><img class="icon10" src="img/photo_change.png"></a>
-   </div>
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.username}</div>
-   <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
+   <div class="profile-email">${o.email}</div>
 </div>
-<p class="setting-text"><a href="#settings-page">Settings</a></p>
+<p class="setting-text btn-circle-addlo"><a href="#user-settings-page">Settings</a></p>
 `);
 
 
@@ -50,11 +47,10 @@ const makeAnimalProfile = templater(o=>`
    <div class="animal-profile-type">Type: ${o.type}</div>
    <div class="animal-profile-breed">Color: ${o.color}</div>
 </div>
-<div class="animal-profile-description"><strong>Description</strong>: ${o.description}</div>
-<div class="delet botton">
-   <a href="#" class="js-animal-delete" data-id="${o.id}"><img src="img/delete.png" alt="" class="icon1">Delete</a>
+<div class="animal-profile-description">${o.description}</div>
+<div class="add-location">
+       <a href="#location-add-page" class="btn-circle-addlo">Add Location</a>
 </div>
-
 `);
 
 
@@ -70,7 +66,7 @@ const makeAnimalPopup = o=>`
 </div>
 </div>
 <div>
-<a href="#" class="form-button10 js-animal-jump" data-id="${o.animal_id}">Visit</a> 
+<a href="#" class="btn-circle-addlo js-animal-jump" data-id="${o.animal_id}">Visit</a> 
 </div>
 `;
 
@@ -93,7 +89,11 @@ const makeAnimalEditForm = o => `
    <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
       <input type="file" data-role="none" id="animal-edit-upload">
    </label>
+   <div class="floater right bottom">
+      <a href="#user-upload-page"><img class="icon12" src="img/photo_change.png"></a>
+   </div>
 </div>
+
 ${FormControl({
    namespace:"animal-edit",
    name:"name",
@@ -118,14 +118,24 @@ ${FormControl({
    placeholder:"Type Animal color",
    value:o.color
 })}
+
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>
    <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type animal description">${o.description}</textarea>
+</div>
+<div class="delet botton">
+   <a href="#" class="js-animal-delete" data-id="${o.id}"><img src="img/delete.png" alt="" class="icon1">Delete</a>
 </div>
 `;
 
 
 const makeUserEditForm = o => `
+<div class="profile-image">
+   <img src="${o.img}" alt="">
+   <div class="floater right bottom">
+      <a href="#user-upload-page"><img class="icon10" src="img/photo_change.png"></a>
+   </div>
+</div>
 ${FormControl({
    namespace:"user-edit",
    name:"username",
@@ -134,14 +144,7 @@ ${FormControl({
    placeholder:"Type Your Username",
    value:o.username
 })}
-${FormControl({
-   namespace:"user-edit",
-   name:"name",
-   displayname:"Full Name",
-   type:"text",
-   placeholder:"Type Your Full Name",
-   value:o.name
-})}
+
 ${FormControl({
    namespace:"user-edit",
    name:"email",
@@ -151,8 +154,6 @@ ${FormControl({
    value:o.email
 })}
 `;
-
-
 
 
 const filterList = (animals,type) => {
