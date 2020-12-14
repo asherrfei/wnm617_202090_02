@@ -44,20 +44,21 @@ const checkAnimalAddForm = () => {
    let name = $("#animal-add-name").val();
    let type = $("#animal-add-type").val();
    let color = $("#animal-add-color").val();
+   let size = $("#animal-add-size").val();
    let description = $("#animal-add-description").val();
-
+   let image = $("#animal-add-image").val();
 
    query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,type,color,description]})
-   .then(d=>{
+      params:[sessionStorage.userId,name,type,color,size,description,image]
+   }).then(d=>{
       if(d.error) {
          throw d.error;
       }
-      console.log(d.id)
 
       $("#animal-add-form")[0].reset();
 
+      console.log(d);
       sessionStorage.animalId = d.id;
       $.mobile.navigate($("#animal-add-destination").val());
    })
@@ -69,12 +70,13 @@ const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
    let type = $("#animal-edit-type").val();
    let color = $("#animal-edit-color").val();
+   let size = $("#animal-edit-size").val();
    let description = $("#animal-edit-description").val();
    let image = $("#animal-edit-image").val();
 
    query({
       type:'update_animal',
-      params:[name,type,color,description,image,sessionStorage.animalId]})
+      params:[name,type,color,size,description,image,sessionStorage.animalId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

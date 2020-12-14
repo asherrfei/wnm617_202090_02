@@ -22,6 +22,7 @@ const makeAnimalList = templater(o=>`
 
 
 
+
 const makeUserProfile = templater(o=>`
 <div class="profile-image1">
    <img src="${o.img}" alt="">
@@ -44,8 +45,9 @@ const makeAnimalProfile = templater(o=>`
 
 <div class="animal-profile-body">
    <div class="animal-profile-name">${o.name}</div>
-   <div class="animal-profile-type">Type: ${o.type}</div>
-   <div class="animal-profile-breed">Color: ${o.color}</div>
+   <div class="animal-profile-breed display-flex">Type<div class="animal-mini-des">${o.type}</div></div>
+   <div class="animal-profile-breed display-flex">Color<div class="animal-mini-des">${o.color}</div></div>
+   <div class="animal-profile-breed display-flex">Size<div class="animal-mini-des">${o.size}</div></div>
 </div>
 <div class="animal-profile-description">${o.description}</div>
 <div class="add-location">
@@ -59,7 +61,7 @@ const makeAnimalPopup = o=>`
 <div>
    <img class="animalpopup" src="${o.img}" alt="" style="width:100px;height:100px">
 </div>
-<div style="padding-left:1em">
+<div style="padding-left:2em">
    <div class="animalpopupprofile-name">${o.name}</div>
    <div class="animalpopupprofile-type">Type: ${o.type}</div>
    <div class="animalpopupprofile-color">Color: ${o.color}</div>
@@ -118,6 +120,14 @@ ${FormControl({
    placeholder:"Type Animal color",
    value:o.color
 })}
+${FormControl({
+   namespace:"animal-edit",
+   name:"size",
+   displayname:"size",
+   type:"text",
+   placeholder:"Type Animal size",
+   value:o.size
+})}
 
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>
@@ -164,8 +174,7 @@ const filterList = (animals,type) => {
 const makeFilterList = (animals) => {
    return `
    <div class="filter btn-circle-icon1" data-field="type" data-value="all">All</div> 
-   ${filterList(animals,'type')} 
-   ${filterList(animals,'color')} 
+   ${filterList(animals,'size')} 
    `;
 }
 

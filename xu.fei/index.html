@@ -15,7 +15,7 @@
    <title>JellyCat Tracker</title>
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-   <link rel="stylesheet" href="css/app1.css">
+   <link rel="stylesheet" href="css/app.css">
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
@@ -114,12 +114,16 @@
       <div data-role="main">
         <div class="map"></div>
 
+
+
+
+
          <div class="modal" id="recent-animal-modal">
             <div class="modal-drawer bottom">
                <div class="modal-close-floater top right">
                   <div class="btn-circle7" data-deactivate="#recent-animal-modal">&times;</div>
                </div>
-               <div class="modal-head">JellyProfile</div>
+               <div class="modal-head">Jelly Profile</div>
                <div class="modal-body"></div>
             </div>
          </div>
@@ -131,6 +135,12 @@
             </div>
          </div>
       </div>
+
+
+
+
+
+
       <footer data-role="footer" data-template="#footer-template">
       </footer>
 </section>
@@ -138,14 +148,6 @@
 <!-- List Page -->
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <!-- <h1>List Page</h1> -->
-   <!--       <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-add-page" data-activate="#list-add-modal">
-              <img src="img/addimage.png" alt="" class="icon-plus">
-            </a></li>
-         </ul> -->
-
           <ul>
             <li class="flex-stretch list-search">
                <form class="hotdog" id="list-search-form" data-ajax="false">
@@ -161,9 +163,6 @@
             </li>
          </ul>
       </header>
-
-
-
       <header data-role="header" class="ui-header1">
          <div class="filter-list"></div>
       </header>
@@ -173,16 +172,14 @@
 
       <div data-role="main">
          <div class="overscroll">
-            <div class="animallist">
-               
+            <div class="animallist">              
             </div>
-
-
          </div>
-<!--        <div class="floater right bottom">
-            <a href="#animal-add-page" class="btn-circle">&plus;</a>
-         </div> -->
       </div>
+
+
+
+
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
@@ -274,12 +271,14 @@
 
 
    <section data-role="page" id="user-upload-page">
-      <header data-role="header">
+      <header data-role="header" class="ui-header2">
          <h1>Choose Photo</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back" class="btn-circle-icon">
+            <img src="img/left.png" alt="" class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-upload">Save</a></li>
+            <li><a href="#" class="js-user-upload btn-circle-icon">
+               <img src="img/save.png" alt="" class="icon5"></a></li>
          </ul>
 
       </header>
@@ -348,9 +347,19 @@
             </a></li>
          </ul>
       </header>
+
+
       <div data-role="main" class="display-flex flex-column">
+         <div class="overscroll">
          <form id="animal-add-form" data-ajax="false" style="padding:1em">
+
             <input type="hidden" id="animal-add-destination" value="#list-page">
+
+            <input type="hidden" id="animal-add-image">
+               <label class="image-uploader thumbnail">
+                  <input type="file" data-role="none" id="animal-add-upload">
+               </label>
+
             <div class="form-control">
                <label for="animal-add-name" class="form-label">Name</label>
                <input id="animal-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
@@ -364,11 +373,16 @@
                <input id="animal-add-color" type="text" class="form-input" data-role="none" placeholder="Type animal color">
             </div>
             <div class="form-control">
+               <label for="animal-add-size" class="form-label">Size</label>
+               <input id="animal-add-size" type="text" class="form-input" data-role="none" placeholder="Type animal size">
+            </div>
+            <div class="form-control">
                <label for="animal-add-description" class="form-label">Description</label>
                <textarea id="animal-add-description" class="form-input" data-role="none" placeholder="Type animal description"></textarea>
             </div>
          </form>
       </div>
+   </div>
    </section>
 
 <!-- animal-edit-page -->

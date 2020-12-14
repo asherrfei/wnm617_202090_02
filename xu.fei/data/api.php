@@ -172,11 +172,12 @@ function makeStatement($data) {
       case "insert_animal":
          $r = makeQuery($c,"INSERT INTO
             `track_animals`
-            (`user_id`,`name`,`type`,`color`,`description`,`img`,`date_create`)
+            (`user_id`,`name`,`type`,`color`,`size`,`description`,`img`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
-            ",$p,false);
+            (?, ?, ?, ?, ?, ?, ?, NOW())
+            ",$p);
          return ["id"=>$c->lastInsertId()];
+
 
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
@@ -221,6 +222,7 @@ function makeStatement($data) {
                `name` = ?,
                `type` = ?,
                `color` = ?,
+               `size` = ?,
                `description` = ?,
                `img` = ?
             WHERE `id` = ?
