@@ -1187,7 +1187,14 @@ li.settings-item {
 .animal-top {
     flex: none;
     position: relative;
-    height: 22vh;
+    height: 25vh;
+    /* padding-left: 2em; */
+    /* margin: 2em; */
+    /* margin-left: 2em; */
+    /* margin-right: 2em; */
+    /* margin-top: 1em; */
+    /* margin-bottom: 1em; */
+    box-shadow: 0px 1px 0px 0 var(--color-white), -1px -6px 12px 0 rgb(0 0 0 / 6%);
 }
 
 .animal-bottom {
@@ -1359,7 +1366,7 @@ img.animalpopup {
     padding-top: 1em;
     line-height: 1.5em;
     margin-top: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 4em;
     /* border-top: 1px solid grey; */
     /* box-shadow: inset 3px 3px 4px #b3b3b345; */
     margin-left: 3em;
@@ -1371,7 +1378,7 @@ img.animalpopup {
     font-weight: 400;
     font-size: 14px;
     /* text-align: justify; */
-}
+}animal-profile-des
 
 .animal-profile-type {
     color: grey;
@@ -1490,6 +1497,8 @@ section#list-page {
     background-color:#43b1b9;
     color:white;
 }
+
+
 .icon5 {
     width: 1em;
     height: 1em;

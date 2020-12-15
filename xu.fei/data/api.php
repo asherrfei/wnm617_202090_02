@@ -175,7 +175,7 @@ function makeStatement($data) {
             (`user_id`,`name`,`type`,`color`,`size`,`description`,`img`,`date_create`)
             VALUES
             (?, ?, ?, ?, ?, ?, ?, NOW())
-            ",$p);
+             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
 

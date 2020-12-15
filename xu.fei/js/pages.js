@@ -180,12 +180,12 @@ const LocationAddPage = async() => {
       let posFromClick = {
          lat:e.latLng.lat(),
          lng:e.latLng.lng(),
-         icon:"img/marker.png"
+         icon:"img/icon_marker.png"
       };
      let posFromCenter = {
          lat:map.getCenter().lat(),
          lng:map.getCenter().lng(),
-         icon:"img/marker.png"
+         icon:"img/icon_marker.png"
       };
 
 
