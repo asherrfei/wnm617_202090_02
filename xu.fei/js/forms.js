@@ -3,6 +3,7 @@
 
 
 const checkSignupForm = () => {
+   let name = $("#signup-name").val();
    let username = $("#signup-username").val();
    let email = $("#signup-email").val();
    let password = $("#signup-password").val();
@@ -11,7 +12,7 @@ const checkSignupForm = () => {
    if(password!=passwordconfirm) {
       throw "Passwords don't match";
    } else {
-      query({type:'insert_user',params:[username,email,password]})
+      query({type:'insert_user',params:[name,username,email,password]})
       .then(d=>{
          if(d.error) {
             throw d.error;
@@ -25,12 +26,13 @@ const checkSignupForm = () => {
 
 
 const checkUserEditForm = () => {
+   let name = $("#user-edit-name").val();
    let username = $("#user-edit-username").val();
    let email = $("#user-edit-email").val();
 
    query({
       type:'update_user',
-      params:[username,email,sessionStorage.userId]})
+      params:[name,username,email,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

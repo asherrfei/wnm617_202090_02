@@ -72,17 +72,24 @@ const ListPage = async() => {
 
 
 
+
+
 const UserProfilePage = async() => {
    let d = await query({
-      type:'user_by_id',
-      params:[sessionStorage.userId]
+      type:'user_by_id',params:[sessionStorage.userId]}).then(d=>{
+
+      console.log(d)
+
+      $("#user-profile-page .profile")
+         .html(makeUserProfile(d.result));
    });
 
-   console.log(d)
-
-   $("#user-profile-page .profile")
-      .html(makeUserProfile(d.result));
+   query({type:'animals_by_user_id',params:[sessionStorage.userId]}).then(d=>{
+      $('.animals-added').html(d.result.length);
+   })
 }
+
+
 const UserEditPage = async() => {
    query({
       type:'user_by_id',

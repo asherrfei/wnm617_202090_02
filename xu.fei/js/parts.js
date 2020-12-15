@@ -28,12 +28,22 @@ const makeUserProfile = templater(o=>`
    <img src="${o.img}" alt="">
 </div>
 <div class="profile-body">
-   <div class="profile-name">${o.username}</div>
+   <div class="profile-name5">${o.name}</div>
+   <div class="profile-email">${o.username}</div>
    <div class="profile-email">${o.email}</div>
 </div>
-<p class="setting-text btn-circle-addlo"><a href="#user-settings-page">Settings</a></p>
-`);
 
+<div class="profile-types">
+   <div class="display-flex">
+      <div class="flex-stretch profile-type">
+         <a href="#list-page">
+            <div class="type-label">JellyCat Types Found</div>
+            <div class="type-number animals-added">${o.length}</div>
+         </a>
+      </div>
+   </div>
+</div>
+`);
 
 
 
@@ -50,9 +60,7 @@ const makeAnimalProfile = templater(o=>`
    <div class="animal-profile-breed display-flex">Size<div class="animal-mini-des">${o.size}</div></div>
 </div>
 <div class="animal-profile-description">${o.description}</div>
-<div class="add-location">
-       <a href="#location-add-page" class="btn-circle-addlo">Add Location</a>
-</div>
+
 `);
 
 
@@ -91,9 +99,7 @@ const makeAnimalEditForm = o => `
    <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
       <input type="file" data-role="none" id="animal-edit-upload">
    </label>
-   <div class="floater right bottom">
-      <a href="#user-upload-page"><img class="icon12" src="img/photo_change.png"></a>
-   </div>
+
 </div>
 
 ${FormControl({
@@ -146,6 +152,15 @@ const makeUserEditForm = o => `
       <a href="#user-upload-page"><img class="icon10" src="img/photo_change.png"></a>
    </div>
 </div>
+${FormControl({
+   namespace:"user-edit",
+   name:"name",
+   displayname:"Name",
+   type:"text",
+   placeholder:"Type Your Name",
+   value:o.name
+})}
+
 ${FormControl({
    namespace:"user-edit",
    name:"username",
